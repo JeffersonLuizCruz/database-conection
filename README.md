@@ -11,7 +11,28 @@ spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 
 ```
-# Conection PostgresSQL
+```
+docker-compose.yml:
+
+services:
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    expose:
+      - "3306"
+    environment:
+      - MYSQL_USER=admin
+      - MYSQL_PASSWORD=admin
+      - MYSQL_DATABASE=nome_deb
+      - MYSQL_ROOT_PASSWORD=admin
+    volumes:
+      - db_data:/var/lib/mysql
+
+volumes:
+  db_data:
+
+ Conection PostgresSQL
 
 ```
 server.error.include-stacktrace=never
