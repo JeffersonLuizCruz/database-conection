@@ -10,6 +10,15 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.format_sql=true
 
+--------------------------------------------------------------------------------------------
+spring.application.name=
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://${MYSQL_HOST:localhost}:3306/nome_base_de_dados
+spring.datasource.username=admin
+spring.datasource.password=123
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+spring.jpa.show-sql=true
+
 ```
 ```
 docker-compose.yml:
@@ -24,7 +33,7 @@ services:
     environment:
       - MYSQL_USER=admin
       - MYSQL_PASSWORD=admin
-      - MYSQL_DATABASE=nome_deb
+      - MYSQL_DATABASE=nome_base_de_dados
       - MYSQL_ROOT_PASSWORD=admin
     volumes:
       - db_data:/var/lib/mysql
